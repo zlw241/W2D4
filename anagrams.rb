@@ -1,12 +1,14 @@
 
 
 class String
+  # O(n!)
   def first_anagram?(other_string)
     perms = []
     self.split("").permutation.each { |p| perms << p.join }
     perms.include? other_string
   end
 
+  # O(n**2)
   def second_anagram?(other_string)
     other_string_dup = other_string.dup.split("")
     self_dup = self.dup.split("")
@@ -19,10 +21,12 @@ class String
     other_string_dup.empty? && self_dup.empty?
   end
 
+  # O(n*log(n))
   def third_anagram?(other_string)
     self.split("").sort == other_string.split("").sort
   end
 
+  # O(n)
   def fourth_anagram?(other_string)
     self_hash = Hash.new(0)
     other_hash = Hash.new(0)

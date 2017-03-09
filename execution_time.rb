@@ -42,6 +42,8 @@ end
 
 
 
+
+
 arr = [4,5,6,7,8,9,0,3,2,1,4,5,33,555]
 p my_min_phase_i(arr)
 p my_min_phase_ii(arr)
